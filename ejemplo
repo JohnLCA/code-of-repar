@@ -1,0 +1,59 @@
+Simulación de Evacuación de Muchedumbres en NetLogo
+Te explicaré el código de manera general para que puedas exponerlo:
+🎯 Propósito del Modelo
+Este es un sistema de simulación de evacuación de emergencia desarrollado en NetLogo, diseñado para analizar el comportamiento de multitudes durante una evacuación en La Paz, Bolivia. Simula cómo las personas escapan de un edificio en situaciones de emergencia.
+🏗️ Estructura Principal
+El código se divide en 4 secciones fundamentales:
+1. Variables Globales y Agentes (líneas 7-36)
+
+Globals: Variables que rastrean estadísticas (evacuados, tiempo, personas atrapadas)
+Personas (breed): Agentes que representan individuos con características como velocidad, edad, nivel de pánico
+Patches: El entorno físico con propiedades como paredes, salidas y zonas de peligro
+
+2. Inicialización (SETUP) (líneas 40-140)
+Configura el escenario de evacuación:
+
+Entorno físico: Crea paredes perimetrales, obstáculos internos (columnas), y múltiples salidas de emergencia
+Población: Genera personas con características individuales (edad afecta velocidad, posición inicial aleatoria)
+Parámetros ajustables: Número de personas, salidas, densidad de obstáculos, ancho de salidas
+
+3. Ciclo de Simulación (GO) (líneas 145-230)
+El motor que ejecuta la simulación en cada paso de tiempo:
+Comportamiento de las personas:
+
+Buscan la salida más cercana y se mueven hacia ella
+Su velocidad se modifica por: edad, nivel de pánico, y densidad de multitud
+Sistema de pánico: Se incrementa por proximidad al peligro, alta densidad, y contagio social
+
+Mecánica de movimiento:
+
+Algoritmo que calcula trayectorias hacia las salidas
+Evita colisiones con paredes y otras personas
+Si quedan atrapadas, intentan rutas alternativas
+
+4. Reportes y Análisis (líneas 235-270)
+Funciones que generan estadísticas en tiempo real:
+
+Porcentaje de evacuación
+Densidad máxima de personas
+Nivel promedio de pánico
+Personas atrapadas
+
+🔑 Conceptos Clave para tu Exposición
+
+Modelado Basado en Agentes: Cada persona es un agente autónomo con comportamiento individual
+Dinámica de Pánico:
+
+Se propaga entre personas cercanas
+Aumenta la velocidad pero reduce la racionalidad
+Visualizado con cambios de color (azul → naranja → rojo)
+
+
+Factores Realistas:
+
+Edad afecta movilidad
+Densidad de multitud reduce velocidad
+Obstáculos arquitectónicos crean cuellos de botella
+
+
+Parámetros Configurables: El modelo permite experimentar con diferentes escenarios (más salidas, más obstáculos, activar zonas de peligro)
